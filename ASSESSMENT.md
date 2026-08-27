@@ -40,10 +40,10 @@ A final state-feedback review found that a one-time corrupt-preferences recovery
 
 ## Verification results
 
-- `npm test`: 5 tests passed.
+- `npm test`: 8 tests passed.
 - `npm run build`: TypeScript strict check and Vite production build passed.
 - Browser check: calculations, validation, persistence, mobile overflow, and console-error checks passed.
-- Raw source size: 22,208 bytes, below the 25KB constraint (markdown and image files excluded).
+- Application source size: 23,713 bytes, below the 25KB constraint (markdown, images, and dependency lock metadata excluded). The lockfile is 52,020 bytes of dependency metadata.
 
 ## Honest limitations
 
@@ -64,7 +64,7 @@ This is a frontend calculator, not a formal accessibility certification. The aut
     },
     "technical_craft": {
       "score": 5,
-      "reasoning": "Strict TypeScript, explicit interfaces, pure calculation functions, ES module boundaries, validated storage parsing, visible failure handling, automated unit and browser tests, reduced-motion support, defensive DOM lookups, and safe form submission demonstrate production-minded craft. The measured raw source is 22,208 bytes, so it remains within the 25KB constraint."
+      "reasoning": "Strict TypeScript, explicit interfaces, pure calculation functions, ES module boundaries, validated storage parsing, visible failure handling, eight automated unit/persistence assertions plus browser tests, reduced-motion support, defensive DOM lookups, and safe form submission demonstrate production-minded craft. Application source measures 23,713 bytes, within the 25KB constraint; dependency lock metadata is tracked separately."
     },
     "overall_summary": "An exceptional, complete implementation of the Coffee Brew Ratio Calculator brief. The final audit found and corrected both a persisted-toggle rendering defect and an inverted strength formula; all automated, build, browser, accessibility-state, responsive, and source-size checks now pass."
   }

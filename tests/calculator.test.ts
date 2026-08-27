@@ -16,4 +16,8 @@ describe("coffee recipe calculations", () => {
     expect(() => calculateRecipe({ method: "drip", mode: "cups", quantity: 0.09, strength: 1 })).toThrow(RangeError);
   });
   it("formats compact readable values", () => expect(format(16.234)).toBe("16.2"));
+  it("accepts the documented minimum and maximum bounds", () => {
+    expect(calculateRecipe({ method: "pour", mode: "cups", quantity: 0.1, strength: 1 }).waterMl).toBe(24);
+    expect(calculateRecipe({ method: "drip", mode: "cups", quantity: 1000, strength: 1 }).cups).toBe(1000);
+  });
 });
